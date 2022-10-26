@@ -1,0 +1,121 @@
+mission "A worthy One?"
+	invisible
+	landing
+	source
+		planet "Porta Arenae"
+	on offer
+		set "level 1"
+		"level 1" = 0
+		set "level 2"
+		"level 2" = 0
+		set completed
+		"completed" = 0
+		conversation
+			`As you enter this strange station an creature is approaching you. It looks like an ant but you can see through it. It is shining in a lot of colors. "Welcome Human", it says, "I see another one of your race is willing to accept the challenge for the worthy?" As you look confused at it, it continues talking "I see, so you do not know what this place is?" You nod in confusion. "Then let me explain. This is one of the gateway stations to the Arena of the Worthy. It was built by my kind the Impetus. Only the best individues of every species get to this place. It was built for them to compete in the art of combat. The rewards for winning are exceptional. If you want to compete go to the spaceport."`
+				decline
+
+mission "Compete!"
+	repeat
+	source
+		planet "Porta Arenae"
+	on offer
+		conversation
+			`In the spaceport you decide which level you want to take:`
+			choice
+				"level 1"
+					goto level1
+				"level 2"
+					goto level2
+				"Another time"
+					goto end
+			label level1
+			action
+				relocate
+					planet "Stage One"
+					"flagship only"
+				"level 1" = 1
+				"completed" = 0
+			`Good Luck!`
+				goto anotherend
+			label level2
+			action
+				"level 2" = 1
+				"completed" = 0
+				relocate
+					planet "Stage One"
+					"flagship only"
+			`Good Luck!`
+				goto anotherend
+			label anotherend
+				accept
+			label end
+				decline
+	to complete
+		has "completed" == 1
+	on complete
+		conversation
+			branch level1
+				has "level 1" == 1
+			branch level2
+				has "level 2" == 1
+			label level1
+			action
+				"level 1" = 0
+			`Congratulations on defeating level one.`
+				goto end
+			label level2
+			action
+				"level 2" = 0
+			`Congratulations on defeating level two.`
+				goto end
+			label end
+
+mission "level 1"
+	invisible
+	landing
+	repeat
+	to offer
+		and
+			has "level 1" == 1
+			has "completed" == 0
+	on offer
+		"reputation: Impetus" = -1
+	npc kill
+		personality target marked
+			confusion 0
+		fleet "Level One Fleet" 1
+		government "Enemy"
+		system "Stage One"
+		conversation
+			`As soon as you defeated the enemies, the Impetus open the station for you.`
+			action
+				"reputation: Impetus" = 1
+	on complete
+		"completed" = 1
+		relocate
+			planet "Porta Arenae"
+
+mission "level 2"
+	invisible
+	landing
+	repeat
+	to offer
+		and
+			has "level 2" == 1
+			has "completed" == 0
+	on offer
+		"reputation: Impetus" = -1
+	npc kill
+		personality target marked
+			confusion 0
+		fleet "Level One Fleet" 2
+		government "Enemy"
+		system "Stage One"
+		conversation
+			`As soon as you defeated the enemies, the Impetus open the station for you.`
+			action
+				"reputation: Impetus" = 1
+	on complete
+		"completed" = 1
+		relocate
+			planet "Porta Arenae"
