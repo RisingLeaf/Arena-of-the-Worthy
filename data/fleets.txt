@@ -2,19 +2,9 @@ fleet "Impetus Guard"
 	government "Impetus"
 	personality
 		heroic opportunistic
-	variant 2
+	variant 12
 		"Adjax"
-	variant 1
+	variant 4
 		"Adjax" 2
-
-fleet "Level One Fleet" 1
-	government "Enemy"
-	names "republic capital"
-	fighters "republic fighter"
-	cargo 0
-	personality
-		heroic opportunistic
-	variant
-		"Carrier"
-		"Lance" 4
-		"Combat Drone" 6
+	variant 1
+		"Antaras" 1

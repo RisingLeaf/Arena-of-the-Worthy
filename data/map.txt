@@ -316,6 +316,7 @@ planet "Porta Arenae"
 	description "This is a spacestation like you never seen one before. Room and time seem to work different here, but you can not explain how. Although there are definitely four stations in the system, they seem to be only one, as you not always depart from the same station you landed on."
 	description "The variety of species here is immense. You see some Hai or Quarg walking around, but also species you never seen before. They all seem to be very busy and only a few of them are standing around chatting."
 	spaceport "The spaceport is immense. Rows after rows of ship stand next to each other. Service bots are crawling around everywhere in refueling and reparing ships."
+	outfitter "ImpetusAll"
 
 planet "Stage One"
 	landscape landscape/porta

@@ -1,5 +1,5 @@
 government Impetus
-	swizzle 17
+	swizzle 16
 	color 0.094 0.868 0.845
 	"player reputation" 1
 	"crew attack" 300
