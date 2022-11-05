@@ -1,4 +1,4 @@
-fleet "Level Three Fleet"
+fleet "Level Five Fleet"
 	government "Enemy"
 	names "republic capital"
 	fighters "republic fighter"

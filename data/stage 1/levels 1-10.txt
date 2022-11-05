@@ -123,7 +123,6 @@ mission "level 5"
 		relocate
 			planet "Porta Arenae"
 
-
 event "level five outfitter"
 	outfitter "ImpetusAll"
 		add "Crystal Turret"
@@ -135,3 +134,40 @@ mission "level 5 first time"
 		has "level 5: done"
 	on offer
 		event "level five outfitter"
+
+mission "level 6"
+	invisible
+	landing
+	repeat
+	to offer
+		and
+			has "level six"
+			not "completed"
+	on offer
+		"reputation: Impetus" = -1
+	npc kill
+		personality target marked
+			confusion 0
+		fleet "Level Five Fleet" 1
+		government "Enemy"
+		system "Stage One"
+		conversation
+			`As soon as you defeated the enemies, the Impetus open the station for you.`
+			action
+				"reputation: Impetus" = 1
+	on complete
+		set "completed"
+		relocate
+			planet "Porta Arenae"
+
+event "level ten outfitter"
+	outfitter "ImpetusAll"
+		add "Crystal Turret"
+
+mission "level 10 first time"
+	invisible
+	landing
+	to offer
+		has "level 10: done"
+	on offer
+		event "level ten outfitter"
