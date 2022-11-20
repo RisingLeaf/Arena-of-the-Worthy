@@ -56,53 +56,29 @@ mission "Compete!"
 	on offer
 		conversation
 			`In the spaceport you decide which stage you want to compete on:`
-			branch level4choice
-				has "level 4: done"
-			branch level3choice
-				has "level 3: done"
-			branch level2choice
-				has "level 2: done"
 			choice
 				"level 1"
 					goto level1
 				"level 2"
-					goto level2
-				"Another time"
-					goto end
-			label level2choice
-			choice
-				"level 1"
-					goto level1
-				"level 2"
+					to display
+						has "level 1: done"
 					goto level2
 				"level 3"
-					goto level3
-				"Another time"
-					goto end
-			label level3choice
-			choice
-				"level 1"
-					goto level1
-				"level 2"
-					goto level2
-				"level 3"
+					to display
+						has "level 2: done"
 					goto level3
 				"level 4"
-					goto level4
-				"Another time"
-					goto end
-			label level4choice
-			choice
-				"level 1"
-					goto level1
-				"level 2"
-					goto level2
-				"level 3"
-					goto level3
-				"level 4"
+					to display
+						has "level 3: done"
 					goto level4
 				"level 5"
+					to display
+						has "level 4: done"
 					goto level5
+				"level 6"
+					to display
+						has "level 5: done"
+					goto level6
 				"Another time"
 					goto end
 #################################################
@@ -148,10 +124,18 @@ mission "Compete!"
 			action
 				relocate
 					planet "Stage One"
-					"flagship only"
 				set "level five"
 				clear "completed"
 			`    "Some Captains have teamed up to slow your progress, be prepared."`
+				goto anotherend
+			label level6
+			action
+				relocate
+					planet "Stage One"
+					"flagship only"
+				set "level six"
+				clear "completed"
+			`    "We do not know why, but the remnant wanted to participate for scientific reasons, have fun."`
 				goto anotherend
 			label anotherend
 			`    "We will now teleport you to another station. Good Luck!"`
@@ -173,6 +157,8 @@ mission "Compete!"
 				has "level four"
 			branch level5
 				has "level five"
+			branch level6
+				has "level six"
 			label level1
 			action
 				clear "level one"
@@ -192,10 +178,16 @@ mission "Compete!"
 			action
 				clear "level four"
 			`"Congratulations on defeating stage four."`
+			`"For stage five you will be able to take your fleet with you. So maybe bring some strong ships?"`
 				goto end
 			label level5
 			action
 				clear "level five"
 			`"Congratulations on defeating stage five."`
+				goto end
+			label level6
+			action
+				clear "level six"
+			`"Congratulations on defeating stage six."`
 				goto end
 			label end
