@@ -21,7 +21,9 @@ mission "level 1"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	location
+	planet "Porta Arenae"
 
 mission "level 2"
 	invisible
@@ -46,7 +48,8 @@ mission "level 2"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	planet "Porta Arenae"
 
 mission "level 3"
 	invisible
@@ -71,7 +74,8 @@ mission "level 3"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	planet "Porta Arenae"
 
 mission "level 4"
 	invisible
@@ -96,7 +100,8 @@ mission "level 4"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	planet "Porta Arenae"
 
 mission "level 5"
 	invisible
@@ -121,7 +126,8 @@ mission "level 5"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	planet "Porta Arenae"
 
 event "level five outfitter"
 	outfitter "ImpetusAll"
@@ -160,7 +166,8 @@ mission "level 6"
 	on complete
 		set "completed"
 		relocate
-			planet "Porta Arenae"
+			location
+	planet "Porta Arenae"
 
 event "level ten outfitter"
 	outfitter "ImpetusAll"

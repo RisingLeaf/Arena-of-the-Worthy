@@ -2,7 +2,9 @@ mission "A worthy One?"
 	invisible
 	landing
 	source
-		planet "Porta Arenae"
+		location
+	location
+	planet "Porta Arenae"
 	on offer
 		conversation
 			`As you enter this strange station an creature is approaching you. It looks like an ant but you can see through it. It is shining in a lot of colors. "Welcome Human", it says, "I see another one of your race is willing to accept the challenge for the worthy?" As you look confused at it, it continues talking "I see, so you do not know what this place is?" You nod in confusion. "Then let me explain. This is one of the gateway stations to the Arena of the Worthy. It was built by my kind the Impetus. Only the best individues of every species get to this place. It was built for them to compete in the art of combat. The rewards for winning are exceptional. If you want to compete go to the spaceport."`
@@ -10,9 +12,11 @@ mission "A worthy One?"
 
 mission "First time: Compete!"
 	source
-		planet "Porta Arenae"
+		location
+	planet "Porta Arenae"
 	destination
-		planet "Porta Arenae"
+		location
+	planet "Porta Arenae"
 	on offer
 		conversation
 			`You go to the spaceport to see what exactly is offered here. Another of this ant like creatures stands at some sort of counter. "Welcome human. I see this is your first time here," it says. Confused about how it knows that fact you just nod.`
@@ -23,7 +27,8 @@ mission "First time: Compete!"
 					goto end
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level one"
 				clear "completed"
@@ -48,9 +53,11 @@ mission "First time: Compete!"
 mission "Compete!"
 	repeat
 	source
-		planet "Porta Arenae"
+		location
+	planet "Porta Arenae"
 	destination
-		planet "Porta Arenae"
+		location
+	planet "Porta Arenae"
 	to offer
 		has "competed once"
 	on offer
@@ -87,7 +94,8 @@ mission "Compete!"
 			label level1
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level one"
 				clear "completed"
@@ -96,7 +104,8 @@ mission "Compete!"
 			label level2
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level two"
 				clear "completed"
@@ -105,7 +114,8 @@ mission "Compete!"
 			label level3
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level three"
 				clear "completed"
@@ -114,7 +124,8 @@ mission "Compete!"
 			label level4
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level four"
 				clear "completed"
@@ -123,7 +134,8 @@ mission "Compete!"
 			label level5
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 				set "level five"
 				clear "completed"
 			`    "Some Captains have teamed up to slow your progress, be prepared."`
@@ -131,7 +143,8 @@ mission "Compete!"
 			label level6
 			action
 				relocate
-					planet "Stage One"
+					location
+	planet "Stage One"
 					"flagship only"
 				set "level six"
 				clear "completed"
